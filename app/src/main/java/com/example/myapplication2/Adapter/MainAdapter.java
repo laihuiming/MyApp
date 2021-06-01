@@ -1,6 +1,7 @@
 package com.example.myapplication2.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication2.Bean.MainBean;
+import com.example.myapplication2.MainActivity;
+import com.example.myapplication2.MeiTuan;
 import com.example.myapplication2.R;
 
 import java.util.List;
@@ -17,7 +20,10 @@ import java.util.List;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
     private View view;
     private List<MainBean> MainBeans;
-    public MainAdapter(List<MainBean> mainBeans){
+
+    private Context context;
+    public MainAdapter(Context context,List<MainBean> mainBeans){
+        this.context = context;
         MainBeans = mainBeans;
     }
 
@@ -46,6 +52,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.MainHolder holder, int position) {
         holder.mtitle.setText("recycleview");
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent = new Intent(context, MeiTuan.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
