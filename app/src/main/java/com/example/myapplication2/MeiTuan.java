@@ -1,9 +1,12 @@
 package com.example.myapplication2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.myapplication2.Adapter.MeiTuanAdapter;
 import com.example.myapplication2.Bean.ItemBean;
 import com.example.myapplication2.Data.Datas;
 
@@ -13,10 +16,16 @@ import java.util.List;
 public class MeiTuan extends AppCompatActivity {
 
     private List<ItemBean> mData;
+    private RecyclerView meituanview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mei_tuan);
+        meituanview = this.findViewById(R.id.rv_meituan);
+        meituanview.setLayoutManager(new LinearLayoutManager(MeiTuan.this));
+        MeiTuanAdapter adapter = new MeiTuanAdapter(mData);
+        meituanview.setAdapter(adapter);
+        initData();
     }
 
     /**
