@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.example.myapplication2.Adapter.MeiTuanAdapter;
@@ -23,7 +24,7 @@ public class MeiTuan extends AppCompatActivity {
         setContentView(R.layout.activity_mei_tuan);
         meituanview = this.findViewById(R.id.rv_meituan);
         meituanview.setLayoutManager(new LinearLayoutManager(MeiTuan.this));
-        MeiTuanAdapter adapter = new MeiTuanAdapter(mData);
+        MeiTuanAdapter adapter = new MeiTuanAdapter(this,mData);
         meituanview.setAdapter(adapter);
         initData();
     }

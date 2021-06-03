@@ -30,7 +30,22 @@ public class MainActivity extends AppCompatActivity {
         mainList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         MainAdapter adapter = new MainAdapter(MainActivity.this,MainBeans);
         mainList.setAdapter(adapter);
-
+        initmainData();
     }
-
+    /**
+     * 这个方法用于模拟数据
+     */
+    private void initmainData() {
+        //List<MainBean>---->Adapter------->setAdapter--------->显示数据.
+        //创建数据集合
+        MainBeans = new ArrayList<>();
+        //创建模拟数据
+        for (int i = 0; i < MainDatas.titles.length; i++) {
+            //创建数据对象
+            MainBean data = new MainBean();
+            data.title = MainDatas.titles[i];
+            //添加到集合里头
+            MainBeans.add(data);
+        }
+    }
 }
