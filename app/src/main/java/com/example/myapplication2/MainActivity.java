@@ -21,31 +21,35 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mainList;
-    private List<MainBean> MainBeans;
+    private List<MainBean> mainBeans;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainList = this.findViewById(R.id.recycle_view);
         mainList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-        MainAdapter adapter = new MainAdapter(MainActivity.this,MainBeans);
+        List<MainBean> mainBeans = this.initmainData();
+        MainAdapter adapter = new MainAdapter(MainActivity.this,mainBeans);
+
         mainList.setAdapter(adapter);
-        initmainData();
     }
     /**
      * 这个方法用于模拟数据
      */
-    private void initmainData() {
+    private List<MainBean> initmainData() {
         //List<MainBean>---->Adapter------->setAdapter--------->显示数据.
         //创建数据集合
-        MainBeans = new ArrayList<>();
+        List<MainBean> mainBeans = new ArrayList<>();
         //创建模拟数据
         for (int i = 0; i < MainDatas.titles.length; i++) {
             //创建数据对象
             MainBean data = new MainBean();
             data.title = MainDatas.titles[i];
             //添加到集合里头
-            MainBeans.add(data);
+            mainBeans.add(data);
+
         }
+        return  mainBeans;
     }
+
 }

@@ -21,11 +21,11 @@ import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
     private View view;
-    public final List<MainBean> MainBeans;
+    public List<MainBean> mainBeans;
     private Context context;
     public MainAdapter(Context context,List<MainBean> mainBeanList){
         this.context = context;
-        this.MainBeans = mainBeanList;
+        this.mainBeans = mainBeanList;
     }
 
 //    public MainAdapter(List<MainBean> mainBeans) {
@@ -52,8 +52,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MainHolder holder, int position) {
-//        holder.setData(MainBeans.get(position));
-        holder.mtitle.setText("RecycleViewTest");
+        holder.setData(mainBeans.get(position));
+//        holder.mtitle.setText("RecycleViewTest");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,21 +62,21 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
                 context.startActivity(intent);
             }
         });
-        holder.mtitle.setText("GlideText");
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent = new Intent(context, GlideActivity.class);
-                context.startActivity(intent);
-            }
-        });
+//        holder.mtitle.setText("GlideText");
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent = new Intent(context, GlideActivity.class);
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
-        if (MainBeans != null){
-            return MainBeans.size();
+        if (mainBeans != null){
+            return mainBeans.size();
         }
         return 5;
     }
