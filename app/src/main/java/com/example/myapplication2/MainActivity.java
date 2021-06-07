@@ -1,68 +1,47 @@
 package com.example.myapplication2;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
+import android.widget.Button;
 
-import com.example.myapplication2.Adapter.MainAdapter;
-import com.example.myapplication2.Bean.ItemBean;
-import com.example.myapplication2.Bean.MainBean;
-import com.example.myapplication2.Data.Datas;
-import com.example.myapplication2.Data.MainDatas;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    private RecyclerView mList;
-    private List<ItemBean> mData;
+    @BindView(R.id.bt_meituan)
+    Button btMeituan;
+    @BindView(R.id.bt_recycleview)
+    Button btRecycleview;
+    @BindView(R.id.glide)
+    Button glide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //找到控件
-        mList = this.findViewById(R.id.recycle_view);
-
-        //RecycleView需要设置样式，其实就是设置布局管理器
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        //设置布局管理器来控制
-        mList.setLayoutManager(layoutManager);
-        //创建适配器
-        MainAdapter adapter = new MainAdapter(mData);
-        //设置到RecycleView里头
-        mList.setAdapter(adapter);
-        //准备数据
-        /**
-         * 模拟模拟数据
-         */
-        initData();
+        ButterKnife.bind(this);
     }
 
-    /**
-     * 这个方法用于模拟数据
-     */
-    private void initData() {
-        //List<DataBea>---->Adapter------->setAdapter--------->显示数据.
-        //创建数据集合
-        mData = new ArrayList<>();
-        //创建模拟数据
-        for (int i = 0; i < Datas.icons.length; i++) {
-            //创建数据对象
-            ItemBean data = new ItemBean();
-            data.icon = Datas.icons[i];
-            data.title = "我是第 " + i + "个条目";
-            //添加到集合里头
-            mData.add(data);
+    @OnClick({R.id.bt_meituan, R.id.bt_recycleview, R.id.glide})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.bt_meituan:
+                Intent intent = new Intent(MainActivity.this,MeiTuan.class);
+                startActivity(intent);
+                break;
+            case R.id.bt_recycleview:
+                Intent intent2 = new Intent(MainActivity.this, RecyclerView.class);
+                startActivity(intent2);
+                break;
+            case R.id.glide:
+                Intent intent3 = new Intent(MainActivity.this,GlideActivity.class);
+                startActivity(intent3);
+                break;
         }
-
     }
 }
