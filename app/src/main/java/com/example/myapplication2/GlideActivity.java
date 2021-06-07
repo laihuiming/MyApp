@@ -12,12 +12,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import jp.wasabeef.glide.transformations.GrayscaleTransformation;
 
 public class GlideActivity extends AppCompatActivity {
 
@@ -228,26 +231,42 @@ public class GlideActivity extends AppCompatActivity {
             case R.id.bt_jiazai13_2:
                 break;
 
+                //禁止图形变换功能
             case R.id.bt_jiazai14_1:
+                Glide.with(this)
+                        .load(url1)
+                        .dontTransform()
+                        .into(ivGlide141);
                 break;
 
             case R.id.bt_jiazai14_2:
+
                 break;
 
             case R.id.bt_jiazai14_3:
                 break;
 
+                //虚化
             case R.id.bt_jiazai14_4_1:
+                Glide.with(this).
+                        load(url1).
+                        apply(RequestOptions.bitmapTransform(new BlurTransformation()))
+                        .into(ivGlide1441);
                 break;
 
+                //黑白
             case R.id.bt_jiazai14_4_2:
+                Glide.with(this)
+                        .load(url1)
+                        .apply(RequestOptions.bitmapTransform(new GrayscaleTransformation()))
+                        .into(ivGlide1442);
                 break;
 
             case R.id.bt_jiazai14_4_3:
                 Glide.with(this)
                         .load(url1)
-
-                        .into(ivGlide142);
+//                        .apply(RequestOptions.bitmapTransform(new BlurTransformation(),new GrayscaleTransformation()))
+                        .into(ivGlide1443);
 
                 break;
 
