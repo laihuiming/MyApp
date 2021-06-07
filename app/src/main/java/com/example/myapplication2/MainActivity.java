@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 
 import com.example.myapplication2.Adapter.MainAdapter;
@@ -20,32 +21,48 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView mainList;
-    private List<MainBean> MainBeans;
+    private static final String TAG = "MainActivity";
+    private RecyclerView mList;
+    private List<ItemBean> mData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mainList = this.findViewById(R.id.recycle_view);
-        mainList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-        MainAdapter adapter = new MainAdapter(MainActivity.this,MainBeans);
-        mainList.setAdapter(adapter);
-        initmainData();
+        //找到控件
+        mList = this.findViewById(R.id.recycle_view);
+
+        //RecycleView需要设置样式，其实就是设置布局管理器
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        //设置布局管理器来控制
+        mList.setLayoutManager(layoutManager);
+        //创建适配器
+        MainAdapter adapter = new MainAdapter(mData);
+        //设置到RecycleView里头
+        mList.setAdapter(adapter);
+        //准备数据
+        /**
+         * 模拟模拟数据
+         */
+        initData();
     }
+
     /**
      * 这个方法用于模拟数据
      */
-    private void initmainData() {
-        //List<MainBean>---->Adapter------->setAdapter--------->显示数据.
+    private void initData() {
+        //List<DataBea>---->Adapter------->setAdapter--------->显示数据.
         //创建数据集合
-        MainBeans = new ArrayList<>();
+        mData = new ArrayList<>();
         //创建模拟数据
-        for (int i = 0; i < MainDatas.titles.length; i++) {
+        for (int i = 0; i < Datas.icons.length; i++) {
             //创建数据对象
-            MainBean data = new MainBean();
-            data.title = MainDatas.titles[i];
+            ItemBean data = new ItemBean();
+            data.icon = Datas.icons[i];
+            data.title = "我是第 " + i + "个条目";
             //添加到集合里头
-            MainBeans.add(data);
+            mData.add(data);
         }
+
     }
 }

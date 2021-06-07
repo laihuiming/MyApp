@@ -10,11 +10,21 @@
         android:id="@+id/bt_glide"
         android:text="加载图片"
         android:background="#29B6F6"
-        android:layout_width="300dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"/>
     <ImageView
         android:id="@+id/iv_glide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/bt_glide_gif"
+        android:text="加载GIF图"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/iv_glide_gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
