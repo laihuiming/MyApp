@@ -4,12 +4,618 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".MeiTuan">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_meituan"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+<!--1-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="1">
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_saoyisao"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/saoyisao" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="扫一扫"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_fukuanma"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/fukuanma" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="付款码"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_kaquan"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/kajuan" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="卡券"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_qixing"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/qixing" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="骑行"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </GridLayout>
+<!--2-->
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <GridLayout
+                android:layout_width="800dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:columnCount="8"
+                android:rowCount="2">
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/bangbangtang" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="棒棒糖"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/baomihua" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="爆米花"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/buding" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="布丁"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/cha" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="茶"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/kafei" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="咖啡"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/guozhi" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="果汁"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/hanbao" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="汉堡"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/jitui" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="鸡腿"
+                        android:textSize="20sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/bangbangtang" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="棒棒糖"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/baomihua" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="爆米花"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_13"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/buding" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="布丁"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/cha" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="茶"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/kafei" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="咖啡"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/guozhi" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="果汁"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/hanbao" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="汉堡"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_rowWeight="1"
+                    android:layout_width="100dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/jitui" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="鸡腿"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </GridLayout>
+            </HorizontalScrollView>
+<!--3-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/pijiu" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:text="这是啤酒的文本................"
+                    android:textSize="28sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/kaixinguo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:text="这是开心果的文本................"
+                    android:textSize="28sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/shengnvguo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:text="这是圣女果的文本................"
+                    android:textSize="28sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/lanmei" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:text="这是蓝莓的文本................"
+                    android:textSize="28sp" />
+            </LinearLayout>
+<!--4-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="20"
+                android:columnCount="2">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_columnWeight="1"
+                    android:layout_height="200dp">
+                    <ImageView
+                        android:src="@mipmap/baomihua"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"/>
+                    <TextView
+                        android:text="这是爆米花的文本............"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    android:layout_columnWeight="1"
+                    android:layout_height="200dp">
+                    <ImageView
+                        android:src="@mipmap/hanbao"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"/>
+                    <TextView
+                        android:text="这是汉堡的文本............"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_columnWeight="1"
+                    android:layout_height="200dp">
+                    <ImageView
+                        android:src="@mipmap/bangbangtang"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"/>
+                    <TextView
+                        android:text="这是棒棒糖的文本............"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    android:layout_columnWeight="1"
+                    android:layout_height="200dp">
+                    <ImageView
+                        android:src="@mipmap/zhangyuxiaowanzi"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"/>
+                    <TextView
+                        android:text="这是章鱼小丸子的文本............"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_columnWeight="1"
+                    android:layout_height="200dp">
+                    <ImageView
+                        android:src="@mipmap/sanmingzhi"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"/>
+                    <TextView
+                        android:text="这是三明治的文本............"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    android:layout_columnWeight="1"
+                    android:layout_height="200dp">
+                    <ImageView
+                        android:src="@mipmap/niupai"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"/>
+                    <TextView
+                        android:text="这是牛排的文本............"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"/>
+                </LinearLayout>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
