@@ -1,67 +1,67 @@
 package com.example.myapplication2.Adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.bumptech.glide.Glide;
-import com.example.myapplication2.Bean.DataDTO;
+import com.example.myapplication2.Bean.RecycleViewBean;
 import com.example.myapplication2.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecycleViewHolder> {
 
-    private List<DataDTO> dataDTOS = new ArrayList<>();
+
+    private static final int TYPE_HEADER = 0;
+
+    private static final int TYPE_NORMAL = 1;
+
     private Context context;
 
+    private List<RecycleViewBean.RecyclerViewDataBean.RecycleViewDatasBean> mArticleList
+            = new ArrayList<>();
 
-    private RecyclerViewAdapter(Context context, List<DataDTO> dataDTOS) {
+    private View mHeaderView;
+    public RecyclerViewAdapter(Context context,List<RecycleViewBean.RecyclerViewDataBean.RecycleViewDatasBean> datasBeans){
         this.context = context;
-        this.dataDTOS = dataDTOS;
+        this.mArticleList = datasBeans;
     }
 
+    //绑定recyclerview
     @NonNull
     @Override
     public RecycleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = View.inflate(parent.getContext(), R.layout.item_recycleview, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_recycleview,parent ,false);
         return new RecycleViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecycleViewHolder holder, int position) {
-        holder.tvTitle.setText(dataDTOS.get(position).getTitle());
-
+        holder.title.setText(mArticleList.get(position).getTitle());
     }
 
+    //返回条目个数
     @Override
     public int getItemCount() {
-        return dataDTOS.size();
+        return mArticleList.size();
     }
 
-    public void refresh(List<DataDTO> arrayList) {
-        //适配器刷新
-        this.dataDTOS.addAll(arrayList);
+    public void refresh(List<RecycleViewBean.RecyclerViewDataBean.RecycleViewDatasBean> list){
+        //这个方法是我们自己手写的，主要是对适配器的一个刷新
+        this.mArticleList.addAll(list);
         notifyDataSetChanged();
     }
 
+    public class RecycleViewHolder extends RecyclerView.ViewHolder {
 
-    class RecycleViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvTitle;
+        public TextView title;
         public RecycleViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvTitle = itemView.findViewById(R.id.tv_recycleview_title);
-        }
-
-        public TextView getTvTitle() {
-            return tvTitle;
+            title = itemView.findViewById(R.id.tv_recycleview_title);
         }
     }
 }

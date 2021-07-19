@@ -132,7 +132,16 @@ public class GlideActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.bt_jiazai1, R.id.iv_glide_1, R.id.bt_jiazai21, R.id.iv_glide_21, R.id.bt_jiazai22, R.id.iv_glide_22, R.id.bt_jiazai23, R.id.iv_glide_23, R.id.bt_jiazai24, R.id.iv_glide_24, R.id.bt_jiazai3, R.id.iv_glide_3, R.id.bt_jiazai4, R.id.iv_glide_4, R.id.bt_jiazai5, R.id.iv_glide_5, R.id.bt_jiazai6, R.id.iv_glide_6, R.id.bt_jiazai7, R.id.iv_glide_7, R.id.bt_jiazai8, R.id.iv_glide_8, R.id.bt_jiazai9, R.id.iv_glide_9, R.id.bt_jiazai10, R.id.iv_glide_10, R.id.bt_jiazai11_1, R.id.iv_glide_11_1, R.id.bt_jiazai11_2, R.id.iv_glide_11_2, R.id.bt_jiazai12, R.id.iv_glide_12, R.id.bt_jiazai13_1, R.id.iv_glide_13, R.id.bt_jiazai13_2, R.id.iv_glide_13_2, R.id.bt_jiazai14_1, R.id.iv_glide_14_1, R.id.bt_jiazai14_2, R.id.iv_glide_14_2, R.id.bt_jiazai14_3, R.id.iv_glide_14_3, R.id.bt_jiazai14_4_1, R.id.iv_glide_14_4_1, R.id.bt_jiazai14_4_2, R.id.iv_glide_14_4_2, R.id.bt_jiazai14_4_3, R.id.iv_glide_14_4_3})
+    @OnClick({R.id.bt_jiazai1, R.id.iv_glide_1, R.id.bt_jiazai21, R.id.iv_glide_21, R.id.bt_jiazai22,
+            R.id.iv_glide_22, R.id.bt_jiazai23, R.id.iv_glide_23, R.id.bt_jiazai24, R.id.iv_glide_24,
+            R.id.bt_jiazai3, R.id.iv_glide_3, R.id.bt_jiazai4, R.id.iv_glide_4, R.id.bt_jiazai5,
+            R.id.iv_glide_5, R.id.bt_jiazai6, R.id.iv_glide_6, R.id.bt_jiazai7, R.id.iv_glide_7,
+            R.id.bt_jiazai8, R.id.iv_glide_8, R.id.bt_jiazai9, R.id.iv_glide_9, R.id.bt_jiazai10,
+            R.id.iv_glide_10, R.id.bt_jiazai11_1, R.id.iv_glide_11_1, R.id.bt_jiazai11_2, R.id.iv_glide_11_2,
+            R.id.bt_jiazai12, R.id.iv_glide_12, R.id.bt_jiazai13_1, R.id.iv_glide_13, R.id.bt_jiazai13_2,
+            R.id.iv_glide_13_2, R.id.bt_jiazai14_1, R.id.iv_glide_14_1, R.id.bt_jiazai14_2, R.id.iv_glide_14_2,
+            R.id.bt_jiazai14_3, R.id.iv_glide_14_3, R.id.bt_jiazai14_4_1, R.id.iv_glide_14_4_1,
+            R.id.bt_jiazai14_4_2, R.id.iv_glide_14_4_2, R.id.bt_jiazai14_4_3, R.id.iv_glide_14_4_3})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_jiazai1:
@@ -238,11 +247,11 @@ public class GlideActivity extends AppCompatActivity {
                         .dontTransform()
                         .into(ivGlide141);
                 break;
-
+                //
             case R.id.bt_jiazai14_2:
 
                 break;
-
+                //
             case R.id.bt_jiazai14_3:
                 break;
 
@@ -261,7 +270,7 @@ public class GlideActivity extends AppCompatActivity {
                         .apply(RequestOptions.bitmapTransform(new GrayscaleTransformation()))
                         .into(ivGlide1442);
                 break;
-
+                //混合使用
             case R.id.bt_jiazai14_4_3:
                 Glide.with(this)
                         .load(url1)

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.bt_recycleview:
-                Intent intent2 = new Intent(MainActivity.this, RecyclerView.class);
+                Intent intent2 = new Intent(MainActivity.this, RecycleViewTest.class);
                 startActivity(intent2);
                 break;
             case R.id.glide:
