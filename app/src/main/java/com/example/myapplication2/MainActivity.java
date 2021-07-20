@@ -1,12 +1,14 @@
 package com.example.myapplication2;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication2.ActivityResultTest.ActivityResultTestActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     Button btRecycleview;
     @BindView(R.id.glide)
     Button glide;
+    @BindView(R.id.activity_result)
+    Button activityResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_meituan, R.id.bt_recycleview, R.id.glide})
+    @OnClick({R.id.bt_meituan, R.id.bt_recycleview, R.id.glide,R.id.activity_result})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_meituan:
-                Intent intent = new Intent(MainActivity.this,MeiTuan.class);
+                Intent intent = new Intent(MainActivity.this, MeiTuan.class);
                 startActivity(intent);
                 break;
             case R.id.bt_recycleview:
@@ -39,9 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 break;
             case R.id.glide:
-                Intent intent3 = new Intent(MainActivity.this,GlideActivity.class);
+                Intent intent3 = new Intent(MainActivity.this, GlideActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.activity_result:
+                Intent intent4 = new Intent(MainActivity.this, ActivityResultTestActivity.class);
+                startActivity(intent4);
                 break;
         }
     }
+
 }

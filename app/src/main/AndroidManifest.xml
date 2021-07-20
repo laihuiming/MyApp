@@ -27,6 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActivityResultTest.ActivityResultTestActivity"/>
+        <activity android:name=".ActivityResultTest.FirstActivity"/>
+        <activity android:name=".ActivityResultTest.SecondActivity"/>
+        <activity android:name=".ActivityResultTest.ThirdActivity"/>
     </application>
 
 </manifest>

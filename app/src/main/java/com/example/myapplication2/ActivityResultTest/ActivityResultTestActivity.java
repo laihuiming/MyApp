@@ -43,7 +43,6 @@ public class ActivityResultTestActivity extends FragmentActivity implements View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_result_test_activity);
         ButterKnife.bind(this);
-
         initview();
     }
 
@@ -64,9 +63,9 @@ public class ActivityResultTestActivity extends FragmentActivity implements View
     int mcode = 0;
     private void showFragment(int code) {
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        transaction.add(R.id.fragment,mFirstFragment);
-        transaction.add(R.id.fragment,mSecondFragment);
-        transaction.add(R.id.fragment,mThirdFragment);
+//        transaction.add(R.id.fragment,mFirstFragment);
+//        transaction.add(R.id.fragment,mSecondFragment);
+//        transaction.add(R.id.fragment,mThirdFragment);
         mcode = code;
         switch (code) {
             case 0:
