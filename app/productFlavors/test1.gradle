@@ -1,0 +1,6 @@
+android {
+    flavorDimensions "versionCode"
+    productFlavors{
+
+    }
+}

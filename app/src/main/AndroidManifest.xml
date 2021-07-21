@@ -31,6 +31,7 @@
         <activity android:name=".ActivityResultTest.FirstActivity"/>
         <activity android:name=".ActivityResultTest.SecondActivity"/>
         <activity android:name=".ActivityResultTest.ThirdActivity"/>
+        <activity android:name=".VisibilityTest.VisibilityTestActivity"/>
     </application>
 
 </manifest>

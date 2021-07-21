@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
 }
-
+apply from:'/productFlavors/test.gradle'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -15,13 +15,106 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    flavorDimensions "versionCode"
+    productFlavors{
+        meizu{
+            applicationId = "com.test.meizu"
+            //不同渠道配置不同参数
+            buildConfigField "int", "TEST_VALUE","1"
+            buildConfigField "String", "TEST_NAME", "\"meizu\""
+        }
+        xiaomi{
+            applicationId = "com.test.xiaomi"
+            //不同渠道配置不同参数
+            buildConfigField "int", "TEST_VALUE", "2"
+            buildConfigField "String", "TEST_NAME", "\"xiaomi\""
+        }
+        productFlavors.all{//遍历productFlavors多渠道，设置渠道号(meizu、xiaomi))
+        flavor -> flavor.manifestPlaceholders.put("CHANNEL",name)
         }
     }
+
+    applicationVariants.all{ variant ->
+//        //打包完成后输出路径
+//        def name = ((project.name != "app") ? project.name : rootProject.name.replace(" ", ""))+
+//                "_" + variant.flavorName +
+//                "_" + variant.buildType.name +
+//                "_" + variant.versionName +
+//                "_" + new Date().format('yyyyMMddhhmm')+".apk"
+//        //相对路径app/build/outputs/apk/xiaomi/release/
+//        def path = "../../../../../apk/"//相当于路径 app/apk/
+//        variant.outputs.each{output ->
+//            def outputFile = output.outputFile
+//            if (outputFile != null && outputFile.name.endsWish('.apk')){
+//                //指定输出路径
+//                output.outputFileName = new File(path, name)
+//            }
+//        }
+//        //打包完成后还可以做一些别的操作，可以复制到指定目录，或者移动文件到指定目录
+//        variant.assemble.doLast{
+//            File out = new File("${project.rootDir}/apk")
+//            variant.outputs.forEach{ file ->
+//               //复制apk到指定文件夹
+//                copy{
+//                    from file.outputFile
+//                    into out
+//                }
+//                //把文件移动到指定文件夹
+//                ant.move file:file.outputFile,
+//                todir:"${project.rootDir}/apk"
+//            }
+//        }
+    }
+//    //多渠道签名的配置
+//    sigingConfigs{
+//        test{
+//            storeFile file("../test.keystore")
+//            storePassword 'test'
+//            keyAlias 'test'
+//            keypasswor 'test'
+//            v1SigingEnabled true
+//            v2SigingEnabled true
+//        }
+//        xiaomi{
+//            storeFile file("../xiaomi.keystore")
+//            storePassword 'xiaomi'
+//            keyAlias 'xiaomi'
+//            keypasswor 'xiaomi'
+//            v1SigingEnabled true
+//            v2SigingEnabled true
+//        }
+//        meizu{
+//            storeFile file("../meizu.keystore")
+//            storePassword 'meizu'
+//            keyAlias 'meizu'
+//            keypasswor 'meizu'
+//            v1SigingEnabled true
+//            v2SigingEnabled true
+//        }
+//    }
+
+//    buildTypes {
+//        debug{
+//            productFlavors.meizu.signingConfig sigingConfigs.test
+//            productFlavors.xiaomi.signingConfig sigingConfigs.test
+//        }
+//        release {
+////            minifyEnabled false
+////            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            productFlavors.meizu.signingConfig sigingConfigs.meizu
+//            productFlavors.xiaomi.signingConfig sigingConfigs.xiaomi
+//        }
+//    }
+//    //不同渠道不同资源文件配置
+//    sourceSets{
+////        meizu.res.srcDirs 'src/main/res-meizu'
+////        xiaomi.res.srcDirs 'src/main/res=xiaomi'
+//    }
+//    //不同渠道不同依赖文件
+//    dependencies {
+////        xiaomiAPI('')
+////        meizuImplementation('')
+//    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

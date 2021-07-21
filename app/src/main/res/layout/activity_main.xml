@@ -26,5 +26,10 @@
         android:text="返回值测试"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/activity_visibility_test"
+        android:text="控件显示与隐藏测试"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
