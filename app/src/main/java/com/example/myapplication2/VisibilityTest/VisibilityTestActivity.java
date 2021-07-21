@@ -2,6 +2,7 @@ package com.example.myapplication2.VisibilityTest;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class VisibilityTestActivity extends Activity {
+    private static final String TAG = "VisibilityTestActivity";
     @BindView(R.id.tv_msg1)
     TextView tvMsg1;
     @BindView(R.id.tv_unread_msg1)
@@ -30,7 +32,11 @@ public class VisibilityTestActivity extends Activity {
     TextView tvMsg4;
     @BindView(R.id.tv_unread_msg4)
     TextView tvUnreadMsg4;
-
+    int msg = 1;
+    private int run(){
+        msg = msg+1;
+        return msg;
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +44,7 @@ public class VisibilityTestActivity extends Activity {
         ButterKnife.bind(this);
 
     }
-    int msg = 0;
+
     @OnClick({R.id.tv_msg1, R.id.tv_msg2, R.id.tv_msg3, R.id.tv_msg4})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -65,16 +71,18 @@ public class VisibilityTestActivity extends Activity {
                 if (unreadmsg3>99){
                     tvUnreadMsg3.setText("99+");
                 }
-                msg = unreadmsg3++;
+                run();
+                Log.e(TAG,"UnReadMsg3:"+unreadmsg3);
                 break;
             case R.id.tv_msg4:
-                int unreadmsg4 = 110;
+                int unreadmsg4 = msg;
                 tvUnreadMsg4.setVisibility(unreadmsg4>0?View.VISIBLE:View.GONE);
                 tvUnreadMsg4.setText(unreadmsg4+"");
                 if (unreadmsg4>99){
                     tvUnreadMsg4.setText("99+");
                 }
-                unreadmsg4 = unreadmsg4--;
+                run();
+                Log.e(TAG,"UnReadMsg4:"+unreadmsg4);
                 break;
         }
     }
