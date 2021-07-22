@@ -14,6 +14,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.myapplication2.ActivityResultTest.TableLayoutTest.TableOneFragment;
+import com.example.myapplication2.ActivityResultTest.TableLayoutTest.TableTwoFragment;
 import com.example.myapplication2.R;
 
 import butterknife.BindView;
@@ -38,6 +40,8 @@ public class ActivityResultTestActivity extends FragmentActivity implements View
     private ThirdFragment mThirdFragment;
     private FragmentManager mFragmentManager;
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,7 @@ public class ActivityResultTestActivity extends FragmentActivity implements View
         ButterKnife.bind(this);
         initview();
     }
+
 
     private void initview() {
         mFirstFragment = new FirstFragment();
