@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,8 +32,8 @@ public class SecondFragment extends Fragment {
     private static final String TAG = "SecondFragment";
     private static final String FIRSTPAGE = "0";
     private static final String SECONDPAGE = "1";
-    @BindView(R.id.iv_first)
-    ImageView ivFirst;
+    public static final String  FRAMENTTYPE="FRAMENTTYPE";
+
     @BindView(R.id.fg_second)
     Button fgSecond;
     @BindView(R.id.tab)
@@ -44,9 +43,11 @@ public class SecondFragment extends Fragment {
     private TableOneFragment mTableOneFragment;
     private TableTwoFragment mTableTwoFragment;
     private FragmentManager mFragmentManager;
+    private TestTabAdapter mTestTabAdapter;
+
+
     private List<Fragment> mFragmentList = new ArrayList<>();
-    private String[] tableName= {"第一个页面","第二个页面"};
-    private Object TableOneFragment;
+    private int[] tableName= {R.string.firstfragment,R.string.secondfragment};//？
 
     @Nullable
     @Override
@@ -60,8 +61,8 @@ public class SecondFragment extends Fragment {
     }
 
     private void initViewPager() {
-        mFragmentList.add((Fragment) TableOneFragment);
-        mFragmentList.add((Fragment) TableOneFragment);
+        mFragmentList.add(TableOneFragment.getInstance(FIRSTPAGE));
+        mFragmentList.add(TableTwoFragment.getInstance(SECONDPAGE));
 
         tab.setTabMode(TabLayout.MODE_FIXED);
         tab.setupWithViewPager(viewpager);
@@ -92,6 +93,8 @@ public class SecondFragment extends Fragment {
         }
     }
 
+
+
     public class TestTabAdapter extends FragmentPagerAdapter {
 
 //        public TestTabAdapter(@NonNull FragmentManager fm, int behavior) {
@@ -115,7 +118,7 @@ public class SecondFragment extends Fragment {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return getActivity().getString(Integer.parseInt(tableName[position]));
+            return getActivity().getString(tableName[position]);//？
         }
     }
 }

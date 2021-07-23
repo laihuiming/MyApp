@@ -31,5 +31,10 @@
         android:text="控件显示与隐藏测试"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/activity_viewpager_test"
+        android:text="切换页面ViewPager测试"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

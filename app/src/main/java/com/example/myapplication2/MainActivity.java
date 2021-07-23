@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication2.ActivityResultTest.ActivityResultTestActivity;
+import com.example.myapplication2.ViewPager.ViewPagerActivity;
 import com.example.myapplication2.VisibilityTest.VisibilityTestActivity;
 
 import butterknife.BindView;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button activityResult;
     @BindView(R.id.activity_visibility_test)
     Button activityVisibilityTest;
+    @BindView(R.id.activity_viewpager_test)
+    Button activityViewpagerTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_meituan, R.id.bt_recycleview, R.id.glide, R.id.activity_result,R.id.activity_visibility_test})
+    @OnClick({R.id.bt_meituan, R.id.bt_recycleview, R.id.glide, R.id.activity_result,
+            R.id.activity_visibility_test,R.id.activity_viewpager_test})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_meituan:
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.activity_visibility_test:
                 startActivity(new Intent(MainActivity.this, VisibilityTestActivity.class));
                 break;
+            case R.id.activity_viewpager_test:
+                startActivity(new Intent(MainActivity.this, ViewPagerActivity.class));
         }
     }
 
