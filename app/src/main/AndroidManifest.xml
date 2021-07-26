@@ -33,6 +33,7 @@
         <activity android:name=".ActivityResultTest.ThirdActivity"/>
         <activity android:name=".VisibilityTest.VisibilityTestActivity"/>
         <activity android:name=".ViewPager.ViewPagerActivity"/>
+        <activity android:name=".DrawerLayout.DrawerLayoutTestActivity"/>
     </application>
 
 </manifest>

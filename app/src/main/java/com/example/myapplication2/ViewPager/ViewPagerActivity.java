@@ -1,6 +1,7 @@
 package com.example.myapplication2.ViewPager;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +29,6 @@ public class ViewPagerActivity extends AppCompatActivity {
     TabLayout tabLayout;
     @BindView(R.id.viewpager)
     ViewPager viewpager;
-
     private ViewPagerAdapter adapter;
 
     //设置界面文件和文字一一对应
@@ -56,8 +56,9 @@ public class ViewPagerActivity extends AppCompatActivity {
         //初始化
         tabLayout.getTabAt(ItemWhat);
         for (int i = 1; i < tabLayout.getTabCount();i++){
-            View view = LayoutInflater.from(ViewPagerActivity.this).inflate(R.layout.item_view1,null);
+            View view = LayoutInflater.from(ViewPagerActivity.this).inflate(R.layout.item_viewpager_view,null);
 //            LinearLayout linearLayout = view.findViewById(R.id.ll_tab1);
+
             TextView tabText = view.findViewById(R.id.tv_tab1);
             ImageView imageView = view.findViewById(R.id.iv_tab1);
 

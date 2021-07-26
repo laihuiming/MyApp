@@ -36,5 +36,9 @@
         android:text="切换页面ViewPager测试"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
+    <Button
+        android:id="@+id/activity_drawerlayout_text"
+        android:text="侧滑页面测试"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
