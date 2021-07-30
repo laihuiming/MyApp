@@ -7,8 +7,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.myapplication2.ARoutDemo.ARoutDemoActivity;
 import com.example.myapplication2.ActivityResultTest.ActivityResultTestActivity;
 import com.example.myapplication2.DrawerLayout.DrawerLayoutTestActivity;
+import com.example.myapplication2.EventBusTest.EBFirstActivity;
 import com.example.myapplication2.ViewPager.ViewPagerActivity;
 import com.example.myapplication2.VisibilityTest.VisibilityTestActivity;
 
@@ -16,6 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+@Route(path = "app/MainActivity")
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.bt_meituan)
     Button btMeituan;
@@ -31,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     Button activityViewpagerTest;
     @BindView(R.id.activity_drawerlayout_text)
     Button activityDrawerlayoutText;
+    @BindView(R.id.activity_eb_first)
+    Button activityEbFirst;
+    @BindView(R.id.activity_arouter_test)
+    Button activityArouterTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +48,10 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+
     @OnClick({R.id.bt_meituan, R.id.bt_recycleview, R.id.glide, R.id.activity_result,
-            R.id.activity_visibility_test, R.id.activity_viewpager_test,R.id.activity_drawerlayout_text})
+            R.id.activity_visibility_test, R.id.activity_viewpager_test, R.id.activity_drawerlayout_text,
+            R.id.activity_eb_first,R.id.activity_arouter_test})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_meituan:
@@ -67,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.activity_drawerlayout_text:
                 startActivity(new Intent(MainActivity.this, DrawerLayoutTestActivity.class));
+                break;
+            case R.id.activity_eb_first:
+                startActivity(new Intent(this, EBFirstActivity.class));
+            case R.id.activity_arouter_test:
+                ARouter.getInstance().build("/app/ARoutDemoActivity").navigation();
+//                startActivity(new Intent(this, ARoutDemoActivity.class));
         }
     }
 

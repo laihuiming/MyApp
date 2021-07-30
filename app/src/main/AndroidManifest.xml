@@ -7,17 +7,23 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:requestLegacyExternalStorage="true"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication2"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RecycleViewTest">
-
-        </activity>
+        <activity android:name=".ARoutDemo.RouteTestThirdActivity"></activity>
+        <activity android:name=".ARoutDemo.RouteTestTwoActivity" />
+        <activity android:name=".ARoutDemo.RouteTestOneActivity" />
+        <activity android:name=".ARoutDemo.ARoutDemoActivity" />
+        <activity android:name=".EventBusTest.EBThirdActivity" />
+        <activity android:name=".EventBusTest.EBSecondActivity" />
+        <activity android:name=".EventBusTest.EBFirstActivity" />
+        <activity android:name=".RecycleViewTest" />
         <activity android:name=".GlideActivity" />
         <activity android:name=".MeiTuan" />
         <activity android:name=".MainActivity">
@@ -27,13 +33,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityResultTest.ActivityResultTestActivity"/>
-        <activity android:name=".ActivityResultTest.FirstActivity"/>
-        <activity android:name=".ActivityResultTest.SecondActivity"/>
-        <activity android:name=".ActivityResultTest.ThirdActivity"/>
-        <activity android:name=".VisibilityTest.VisibilityTestActivity"/>
-        <activity android:name=".ViewPager.ViewPagerActivity"/>
-        <activity android:name=".DrawerLayout.DrawerLayoutTestActivity"/>
+        <activity android:name=".ActivityResultTest.ActivityResultTestActivity" />
+        <activity android:name=".ActivityResultTest.FirstActivity" />
+        <activity android:name=".ActivityResultTest.SecondActivity" />
+        <activity android:name=".ActivityResultTest.ThirdActivity" />
+        <activity android:name=".VisibilityTest.VisibilityTestActivity" />
+        <activity android:name=".ViewPager.ViewPagerActivity" />
+        <activity android:name=".DrawerLayout.DrawerLayoutTestActivity" />
     </application>
 
 </manifest>

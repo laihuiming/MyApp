@@ -41,4 +41,14 @@
         android:text="侧滑页面测试"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/activity_eb_first"
+        android:text="EventBusTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/activity_arouter_test"
+        android:text="ARouterTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

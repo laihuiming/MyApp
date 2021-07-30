@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EventBusTest.EBThirdActivity">
+
+    <TextView
+        android:id="@+id/tv_eb_test3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="这是EventBus第三个Activity"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/bt_eb3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="返回第一个Activity"
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/tv_eb_nm_test3"
+        android:text="这里接收普通数据"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
