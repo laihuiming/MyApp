@@ -6,9 +6,11 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+@Route(path = "/app/MeiTuan")
 public class MeiTuan extends AppCompatActivity {
 
     @Override

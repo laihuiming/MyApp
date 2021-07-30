@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.myapplication2.R;
 
 import org.greenrobot.eventbus.EventBus;
@@ -18,7 +19,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+@Route(path = "/app/EBThirdActivity")
 public class EBThirdActivity extends AppCompatActivity {
 
     private static final String TAG = "EBThirdActivity";

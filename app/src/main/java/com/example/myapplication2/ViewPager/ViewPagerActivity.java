@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.myapplication2.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -22,7 +23,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+@Route(path = "/app/ViewPagerActivity")
 public class ViewPagerActivity extends AppCompatActivity {
 
     @BindView(R.id.tabLayout)

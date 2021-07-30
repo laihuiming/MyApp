@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
@@ -37,7 +38,7 @@ import butterknife.OnClick;
 
 import static com.example.myapplication2.util.TimeFormat.Y_M_D_SHOW;
 import static com.example.myapplication2.util.TimeFormat.getCurrTime;
-
+@Route(path = "/app/DrawerLayoutTestActivity")
 public class DrawerLayoutTestActivity extends AppCompatActivity {
     @BindView(R.id.open_drawerlayout)
     TextView openDrawerlayout;

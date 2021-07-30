@@ -8,12 +8,13 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.myapplication2.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+@Route(path = "/app/VisibilityTestActivity")
 public class VisibilityTestActivity extends Activity {
     private static final String TAG = "VisibilityTestActivity";
     @BindView(R.id.tv_msg1)

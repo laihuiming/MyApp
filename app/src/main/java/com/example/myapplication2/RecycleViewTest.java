@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.myapplication2.Adapter.RecyclerViewAdapter;
 import com.example.myapplication2.Bean.RecycleViewBean;
 
@@ -17,7 +18,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
+@Route(path = "/app/RecycleViewTest")
 public class RecycleViewTest extends AppCompatActivity {
 
     private RecyclerView recyclerView;

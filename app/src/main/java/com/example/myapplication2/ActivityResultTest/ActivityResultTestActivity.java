@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.myapplication2.ActivityResultTest.TableLayoutTest.TableOneFragment;
 import com.example.myapplication2.ActivityResultTest.TableLayoutTest.TableTwoFragment;
 import com.example.myapplication2.R;
@@ -21,7 +22,7 @@ import com.example.myapplication2.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+@Route(path = "app/ActivityResultTestActivity")
 public class ActivityResultTestActivity extends FragmentActivity implements View.OnClickListener {
     @BindView(R.id.fragment)
     FrameLayout fragment;
