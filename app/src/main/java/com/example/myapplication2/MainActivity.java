@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MainAdapter adapter;
     private List<MainBean> mainArrayList = new ArrayList<MainBean>();
+    private List<MainBean> pathArrayList = new ArrayList<MainBean>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     private void initData() {
+
+        for (int i = 0;i<MainDatas.path.length;i++){
+            MainBean pathdata = new MainBean();
+            pathdata.path  = MainDatas.path[i];
+            pathArrayList.add(pathdata);
+        }
 
         for (int i = 0; i<MainDatas.titles.length;i++){
             MainBean data = new MainBean();
@@ -83,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MainAdapter(getApplicationContext(),mainArrayList);//实例化适配器
         recyclerView.setAdapter(adapter);//添加适配器
     }
+
 
 
 //    @OnClick({R.id.bt_meituan, R.id.bt_recycleview, R.id.glide, R.id.activity_result,

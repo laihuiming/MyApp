@@ -14,7 +14,7 @@ public class Constant {
 
     public static final String RECYCLEVIEW = "/app/RecycleViewTest";
 
-    public static final String FANHUIZHI = "app/ActivityResultTestActivity";
+    public static final String FANHUIZHI = "/app/ActivityResultTestActivity";
 
     public static final String VISIBILITY = "/app/VisibilityTestActivity";
 
