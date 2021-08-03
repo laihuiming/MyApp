@@ -12,7 +12,8 @@ public class MainDatas {
             "切换页面ViewPager测试",
             "侧滑页面测试",
             "EventBusTest",
-            "ARouterTest"
+            "ARouterTest",
+            "SmartRefreshLayout下拉刷新框架"
 
     };
     public static String[] path = {
@@ -24,7 +25,8 @@ public class MainDatas {
             Constant.VIEWPAGER,
             Constant.DRAWERLAYOUT,
             Constant.EVENTBUSTEST,
-            Constant.AROUTERTEST
+            Constant.AROUTERTEST,
+            Constant.SMARTREFRESH
     };
     public MainDatas() {
     }

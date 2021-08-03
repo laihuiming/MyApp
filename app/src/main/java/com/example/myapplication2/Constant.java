@@ -25,4 +25,6 @@ public class Constant {
     public static final String EVENTBUSTEST = "/app/EBThirdActivity";
 
     public static final String AROUTERTEST = "/app/ARoutDemoActivity";
+
+    public static final String SMARTREFRESH = "/app/SmartRefreshLayoutTest";
 }

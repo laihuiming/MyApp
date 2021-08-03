@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication2"
         android:usesCleartextTraffic="true">
+        <activity android:name=".SmartRefreshLayout.SmartRefreshLayoutTest"></activity>
         <activity android:name=".ARoutDemo.RouteTestThirdActivity"></activity>
         <activity android:name=".ARoutDemo.RouteTestTwoActivity" />
         <activity android:name=".ARoutDemo.RouteTestOneActivity" />
