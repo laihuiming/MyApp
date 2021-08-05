@@ -1,10 +1,11 @@
 package com.example.myapplication2.Bean;
 
+import com.contrarywind.interfaces.IPickerViewData;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class CityBean {
+public class CityBean implements IPickerViewData {
 
     @SerializedName("province")
     private String province;
@@ -25,5 +26,10 @@ public class CityBean {
 
     public void setCityList(List<String> cityList) {
         this.cityList = cityList;
+    }
+
+    @Override
+    public String getPickerViewText() {
+        return this.province;
     }
 }

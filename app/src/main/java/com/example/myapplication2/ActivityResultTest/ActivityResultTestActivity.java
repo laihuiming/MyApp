@@ -22,7 +22,7 @@ import com.example.myapplication2.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-@Route(path = "app/ActivityResultTestActivity")
+@Route(path = "/app/ActivityResultTestActivity")
 public class ActivityResultTestActivity extends FragmentActivity implements View.OnClickListener {
     @BindView(R.id.fragment)
     FrameLayout fragment;

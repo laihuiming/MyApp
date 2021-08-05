@@ -77,12 +77,12 @@ public class DrawerLayoutTestActivity extends AppCompatActivity {
     }
 
     private void initJsonData() {
-        String cityData = new GetJsonDataUtil().getJson(this,"city_code.json");
-        ArrayList<CityBean> jsonBean = parse(cityData);
+        String CityData = new GetJsonDataUtil().getJson(this,"city_code.json");
+        ArrayList<CityBean> jsonBean = parseData(CityData);
         options1Items = jsonBean;
         for (int i = 0;i < jsonBean.size();i++){//遍历省份
             ArrayList<String> CityList = new ArrayList<>();//省的城市列表
-            ArrayList<ArrayList<String>> Province_List = new ArrayList<>();//该省的所有地区列表
+            ArrayList<ArrayList<String>> Province_AreaList = new ArrayList<>();//该省的所有地区列表
             for (int j = 0; j < jsonBean.get(i).getCityList().size();j++){
                 String CityName = jsonBean.get(i).getCityList().get(j);
                 CityList.add(CityName);
@@ -92,16 +92,16 @@ public class DrawerLayoutTestActivity extends AppCompatActivity {
         mHandler.sendEmptyMessage(MSG_LOAD_SUCCESS);
     }
 
-    private ArrayList<CityBean> parse(String result) {//Gson解析
+    public ArrayList<CityBean> parseData(String result) {//Gson 解析
         ArrayList<CityBean> detail = new ArrayList<>();
         try {
             JSONArray data = new JSONArray(result);
             Gson gson = new Gson();
-            for (int i = 0; i < data.length();i++){
-                CityBean entity = gson.fromJson(data.optJSONObject(i).toString(),CityBean.class);
+            for (int i = 0; i < data.length(); i++) {
+                CityBean entity = gson.fromJson(data.optJSONObject(i).toString(), CityBean.class);
                 detail.add(entity);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             mHandler.sendEmptyMessage(MSG_LOAD_FAILED);
         }

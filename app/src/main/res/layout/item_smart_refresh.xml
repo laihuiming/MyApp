@@ -5,12 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <TextView
-        android:id="@+id/tv_smart_title"
+        android:id="@+id/tv_smart_id"
+        android:text="sss"
         android:textSize="35sp"
         android:layout_marginTop="10dp"
         android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
 
+    <TextView
+        android:id="@+id/tv_smart_name"
+        android:text="sss"
+        android:textSize="35sp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tv_smart_age"
+        android:text="sss"
+        android:textSize="35sp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    </LinearLayout>
 </LinearLayout>
